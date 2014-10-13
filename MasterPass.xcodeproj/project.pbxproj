@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01484E9E19EC31FB00A3AC54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01484E9D19EC31FB00A3AC54 /* AppDelegate.swift */; };
+		01484EA019EC31FB00A3AC54 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 01484E9F19EC31FB00A3AC54 /* GameScene.sks */; };
+		01484EA219EC31FB00A3AC54 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01484EA119EC31FB00A3AC54 /* GameScene.swift */; };
+		01484EA419EC31FB00A3AC54 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01484EA319EC31FB00A3AC54 /* GameViewController.swift */; };
+		01484EA719EC31FB00A3AC54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01484EA519EC31FB00A3AC54 /* Main.storyboard */; };
+		01484EA919EC31FB00A3AC54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01484EA819EC31FB00A3AC54 /* Images.xcassets */; };
+		01484EAC19EC31FB00A3AC54 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01484EAA19EC31FB00A3AC54 /* LaunchScreen.xib */; };
+		01484EB819EC31FB00A3AC54 /* MasterPassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01484EB719EC31FB00A3AC54 /* MasterPassTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01484EB219EC31FB00A3AC54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01484E9019EC31FB00A3AC54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01484E9719EC31FB00A3AC54;
+			remoteInfo = MasterPass;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01484E9819EC31FB00A3AC54 /* MasterPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01484E9C19EC31FB00A3AC54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01484E9D19EC31FB00A3AC54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01484E9F19EC31FB00A3AC54 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		01484EA119EC31FB00A3AC54 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		01484EA319EC31FB00A3AC54 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		01484EA619EC31FB00A3AC54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01484EA819EC31FB00A3AC54 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		01484EAB19EC31FB00A3AC54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		01484EB119EC31FB00A3AC54 /* MasterPassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterPassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01484EB619EC31FB00A3AC54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01484EB719EC31FB00A3AC54 /* MasterPassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPassTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01484E9519EC31FB00A3AC54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01484EAE19EC31FB00A3AC54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01484E8F19EC31FB00A3AC54 = {
+			isa = PBXGroup;
+			children = (
+				01484E9A19EC31FB00A3AC54 /* MasterPass */,
+				01484EB419EC31FB00A3AC54 /* MasterPassTests */,
+				01484E9919EC31FB00A3AC54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01484E9919EC31FB00A3AC54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01484E9819EC31FB00A3AC54 /* MasterPass.app */,
+				01484EB119EC31FB00A3AC54 /* MasterPassTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01484E9A19EC31FB00A3AC54 /* MasterPass */ = {
+			isa = PBXGroup;
+			children = (
+				01484E9D19EC31FB00A3AC54 /* AppDelegate.swift */,
+				01484E9F19EC31FB00A3AC54 /* GameScene.sks */,
+				01484EA119EC31FB00A3AC54 /* GameScene.swift */,
+				01484EA319EC31FB00A3AC54 /* GameViewController.swift */,
+				01484EA519EC31FB00A3AC54 /* Main.storyboard */,
+				01484EA819EC31FB00A3AC54 /* Images.xcassets */,
+				01484EAA19EC31FB00A3AC54 /* LaunchScreen.xib */,
+				01484E9B19EC31FB00A3AC54 /* Supporting Files */,
+			);
+			path = MasterPass;
+			sourceTree = "<group>";
+		};
+		01484E9B19EC31FB00A3AC54 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01484E9C19EC31FB00A3AC54 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01484EB419EC31FB00A3AC54 /* MasterPassTests */ = {
+			isa = PBXGroup;
+			children = (
+				01484EB719EC31FB00A3AC54 /* MasterPassTests.swift */,
+				01484EB519EC31FB00A3AC54 /* Supporting Files */,
+			);
+			path = MasterPassTests;
+			sourceTree = "<group>";
+		};
+		01484EB519EC31FB00A3AC54 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01484EB619EC31FB00A3AC54 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01484E9719EC31FB00A3AC54 /* MasterPass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01484EBB19EC31FB00A3AC54 /* Build configuration list for PBXNativeTarget "MasterPass" */;
+			buildPhases = (
+				01484E9419EC31FB00A3AC54 /* Sources */,
+				01484E9519EC31FB00A3AC54 /* Frameworks */,
+				01484E9619EC31FB00A3AC54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MasterPass;
+			productName = MasterPass;
+			productReference = 01484E9819EC31FB00A3AC54 /* MasterPass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01484EB019EC31FB00A3AC54 /* MasterPassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01484EBE19EC31FB00A3AC54 /* Build configuration list for PBXNativeTarget "MasterPassTests" */;
+			buildPhases = (
+				01484EAD19EC31FB00A3AC54 /* Sources */,
+				01484EAE19EC31FB00A3AC54 /* Frameworks */,
+				01484EAF19EC31FB00A3AC54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01484EB319EC31FB00A3AC54 /* PBXTargetDependency */,
+			);
+			name = MasterPassTests;
+			productName = MasterPassTests;
+			productReference = 01484EB119EC31FB00A3AC54 /* MasterPassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01484E9019EC31FB00A3AC54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = poemsio;
+				TargetAttributes = {
+					01484E9719EC31FB00A3AC54 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					01484EB019EC31FB00A3AC54 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 01484E9719EC31FB00A3AC54;
+					};
+				};
+			};
+			buildConfigurationList = 01484E9319EC31FB00A3AC54 /* Build configuration list for PBXProject "MasterPass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01484E8F19EC31FB00A3AC54;
+			productRefGroup = 01484E9919EC31FB00A3AC54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01484E9719EC31FB00A3AC54 /* MasterPass */,
+				01484EB019EC31FB00A3AC54 /* MasterPassTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01484E9619EC31FB00A3AC54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01484EAC19EC31FB00A3AC54 /* LaunchScreen.xib in Resources */,
+				01484EA919EC31FB00A3AC54 /* Images.xcassets in Resources */,
+				01484EA019EC31FB00A3AC54 /* GameScene.sks in Resources */,
+				01484EA719EC31FB00A3AC54 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01484EAF19EC31FB00A3AC54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01484E9419EC31FB00A3AC54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01484EA219EC31FB00A3AC54 /* GameScene.swift in Sources */,
+				01484EA419EC31FB00A3AC54 /* GameViewController.swift in Sources */,
+				01484E9E19EC31FB00A3AC54 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01484EAD19EC31FB00A3AC54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01484EB819EC31FB00A3AC54 /* MasterPassTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01484EB319EC31FB00A3AC54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01484E9719EC31FB00A3AC54 /* MasterPass */;
+			targetProxy = 01484EB219EC31FB00A3AC54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01484EA519EC31FB00A3AC54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01484EA619EC31FB00A3AC54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01484EAA19EC31FB00A3AC54 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01484EAB19EC31FB00A3AC54 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01484EB919EC31FB00A3AC54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		01484EBA19EC31FB00A3AC54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01484EBC19EC31FB00A3AC54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MasterPass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01484EBD19EC31FB00A3AC54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MasterPass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		01484EBF19EC31FB00A3AC54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MasterPassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterPass.app/MasterPass";
+			};
+			name = Debug;
+		};
+		01484EC019EC31FB00A3AC54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MasterPassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterPass.app/MasterPass";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01484E9319EC31FB00A3AC54 /* Build configuration list for PBXProject "MasterPass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01484EB919EC31FB00A3AC54 /* Debug */,
+				01484EBA19EC31FB00A3AC54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01484EBB19EC31FB00A3AC54 /* Build configuration list for PBXNativeTarget "MasterPass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01484EBC19EC31FB00A3AC54 /* Debug */,
+				01484EBD19EC31FB00A3AC54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01484EBE19EC31FB00A3AC54 /* Build configuration list for PBXNativeTarget "MasterPassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01484EBF19EC31FB00A3AC54 /* Debug */,
+				01484EC019EC31FB00A3AC54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01484E9019EC31FB00A3AC54 /* Project object */;
+}
