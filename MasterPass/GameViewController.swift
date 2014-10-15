@@ -26,9 +26,16 @@ extension SKNode {
 }
 
 class GameViewController: UIViewController {
+    
+    var passcode:[Character] = Array()
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
@@ -41,6 +48,7 @@ class GameViewController: UIViewController {
             
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
+            scene.vc = self
             
             skView.presentScene(scene)
         }
@@ -58,6 +66,7 @@ class GameViewController: UIViewController {
         }
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
