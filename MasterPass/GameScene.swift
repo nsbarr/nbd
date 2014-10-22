@@ -34,15 +34,40 @@ class GameScene: SKScene, UITextFieldDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let passphraseField = UITextField(frame:CGRectMake(self.size.width/2, 20, 2*view.frame.width/3, 60))
-        passphraseField.center.x = view.center.x
+
+    
+        
+        let path = NSBundle.mainBundle().pathForResource("everyfourletterword", ofType: "txt")
+        let content = NSString.stringWithContentsOfFile(path!, encoding: NSUTF8StringEncoding, error: nil)
+        let upperContent = content.uppercaseString
+        wordArray = upperContent.componentsSeparatedByString("\n")
+        self.backgroundColor = UIColor.blackColor()
+        
+        self.enterMasterPass()
+        
+
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if (countElements(textField.text)) > 3 {
+            let swiftRange = advance(textField.text.startIndex, 3)..<advance(textField.text.startIndex, 4)
+            textField.text = textField.text.stringByReplacingCharactersInRange(swiftRange, withString: "")
+        }
+        
+        return true
+    }
+    
+    
+    func enterMasterPass() {
+        let passphraseField = UITextField(frame:CGRectMake(self.size.width/2, 20, 2*view!.frame.width/3, 60))
+        passphraseField.center.x = view!.center.x
         passphraseField.backgroundColor = UIColor.blackColor()
         passphraseField.font = UIFont(name: "Avenir", size: tileFontSize)
         passphraseField.textAlignment = NSTextAlignment.Center
         passphraseField.keyboardType = UIKeyboardType.ASCIICapable
         passphraseField.autocorrectionType = UITextAutocorrectionType.No
         passphraseField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-       // passphraseField.placeholder = "- - - -"
+        // passphraseField.placeholder = "- - - -"
         passphraseField.textColor = UIColor.whiteColor()
         passphraseField.returnKeyType = UIReturnKeyType.Done
         passphraseField.delegate = self
@@ -61,27 +86,7 @@ class GameScene: SKScene, UITextFieldDelegate {
         playerPromptLine2.fontSize = 30
         
         self.addChild(playerPromptLine2)
-    
-        
-        let path = NSBundle.mainBundle().pathForResource("everyfourletterword", ofType: "txt")
-        let content = NSString.stringWithContentsOfFile(path!, encoding: NSUTF8StringEncoding, error: nil)
-        let upperContent = content.uppercaseString
-        wordArray = upperContent.componentsSeparatedByString("\n")
-        
-        view.addSubview(passphraseField)
-
-        self.backgroundColor = UIColor.blackColor()
-        
-
-    }
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if (countElements(textField.text)) > 3 {
-            let swiftRange = advance(textField.text.startIndex, 3)..<advance(textField.text.startIndex, 4)
-            textField.text = textField.text.stringByReplacingCharactersInRange(swiftRange, withString: "")
-        }
-        
-        return true
+        view!.addSubview(passphraseField)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
