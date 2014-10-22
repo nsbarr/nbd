@@ -20,6 +20,7 @@
 		01A7B5CA19EF219A0040E289 /* everyword.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01A7B5C919EF219A0040E289 /* everyword.txt */; };
 		01A7B5CC19EF31830040E289 /* everyfourletterword.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01A7B5CB19EF31830040E289 /* everyfourletterword.txt */; };
 		01E275B819EDD431007B5690 /* EnterPasswordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E275B719EDD431007B5690 /* EnterPasswordScene.swift */; };
+		01FB4CB819F81D9300E6C301 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB4CB719F81D9300E6C301 /* MenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		01A7B5C919EF219A0040E289 /* everyword.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = everyword.txt; sourceTree = "<group>"; };
 		01A7B5CB19EF31830040E289 /* everyfourletterword.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = everyfourletterword.txt; sourceTree = "<group>"; };
 		01E275B719EDD431007B5690 /* EnterPasswordScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasswordScene.swift; sourceTree = "<group>"; };
+		01FB4CB719F81D9300E6C301 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				01484EF619ECAF1C00A3AC54 /* Oval.png */,
 				01484E9F19EC31FB00A3AC54 /* GameScene.sks */,
 				01484EA119EC31FB00A3AC54 /* GameScene.swift */,
+				01FB4CB719F81D9300E6C301 /* MenuButton.swift */,
 				01E275B719EDD431007B5690 /* EnterPasswordScene.swift */,
 				01484EA319EC31FB00A3AC54 /* GameViewController.swift */,
 				01484EA819EC31FB00A3AC54 /* Images.xcassets */,
@@ -240,6 +243,7 @@
 			files = (
 				01484EA219EC31FB00A3AC54 /* GameScene.swift in Sources */,
 				01484EA419EC31FB00A3AC54 /* GameViewController.swift in Sources */,
+				01FB4CB819F81D9300E6C301 /* MenuButton.swift in Sources */,
 				01E275B819EDD431007B5690 /* EnterPasswordScene.swift in Sources */,
 				01484E9E19EC31FB00A3AC54 /* AppDelegate.swift in Sources */,
 			);
