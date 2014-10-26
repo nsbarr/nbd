@@ -21,6 +21,7 @@
 		01A7B5CC19EF31830040E289 /* everyfourletterword.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01A7B5CB19EF31830040E289 /* everyfourletterword.txt */; };
 		01E275B819EDD431007B5690 /* EnterPasswordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E275B719EDD431007B5690 /* EnterPasswordScene.swift */; };
 		01FB4CB819F81D9300E6C301 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB4CB719F81D9300E6C301 /* MenuButton.swift */; };
+		01FB4CBA19F84ADC00E6C301 /* masterpasslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB4CB919F84ADC00E6C301 /* masterpasslogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		01A7B5CB19EF31830040E289 /* everyfourletterword.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = everyfourletterword.txt; sourceTree = "<group>"; };
 		01E275B719EDD431007B5690 /* EnterPasswordScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasswordScene.swift; sourceTree = "<group>"; };
 		01FB4CB719F81D9300E6C301 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		01FB4CB919F84ADC00E6C301 /* masterpasslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = masterpasslogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		01484E9A19EC31FB00A3AC54 /* MasterPass */ = {
 			isa = PBXGroup;
 			children = (
+				01FB4CB919F84ADC00E6C301 /* masterpasslogo.png */,
 				01484E9D19EC31FB00A3AC54 /* AppDelegate.swift */,
 				01484EF619ECAF1C00A3AC54 /* Oval.png */,
 				01484E9F19EC31FB00A3AC54 /* GameScene.sks */,
@@ -216,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FB4CBA19F84ADC00E6C301 /* masterpasslogo.png in Resources */,
 				01A7B5CC19EF31830040E289 /* everyfourletterword.txt in Resources */,
 				01484EAC19EC31FB00A3AC54 /* LaunchScreen.xib in Resources */,
 				01484EA919EC31FB00A3AC54 /* Images.xcassets in Resources */,
