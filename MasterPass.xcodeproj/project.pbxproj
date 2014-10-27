@@ -17,6 +17,9 @@
 		01484EC319EC5EC500A3AC54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01484EC119EC5EC500A3AC54 /* Main.storyboard */; };
 		01484EF719ECAF1C00A3AC54 /* Oval.png in Resources */ = {isa = PBXBuildFile; fileRef = 01484EF619ECAF1C00A3AC54 /* Oval.png */; };
 		01484EFB19ECB69F00A3AC54 /* Rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 01484EFA19ECB69F00A3AC54 /* Rectangle.png */; };
+		017F667719FEA065004C168F /* bo_play_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 017F667619FEA065004C168F /* bo_play_pattern.png */; };
+		017F667919FEF878004C168F /* everyfiveletterword.txt in Resources */ = {isa = PBXBuildFile; fileRef = 017F667819FEF878004C168F /* everyfiveletterword.txt */; };
+		017F667B19FF0881004C168F /* skull.png in Resources */ = {isa = PBXBuildFile; fileRef = 017F667A19FF0881004C168F /* skull.png */; };
 		01A7B5CA19EF219A0040E289 /* everyword.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01A7B5C919EF219A0040E289 /* everyword.txt */; };
 		01A7B5CC19EF31830040E289 /* everyfourletterword.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01A7B5CB19EF31830040E289 /* everyfourletterword.txt */; };
 		01E275B819EDD431007B5690 /* EnterPasswordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E275B719EDD431007B5690 /* EnterPasswordScene.swift */; };
@@ -49,6 +52,9 @@
 		01484EC219EC5EC500A3AC54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01484EF619ECAF1C00A3AC54 /* Oval.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oval.png; sourceTree = "<group>"; };
 		01484EFA19ECB69F00A3AC54 /* Rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rectangle.png; sourceTree = "<group>"; };
+		017F667619FEA065004C168F /* bo_play_pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bo_play_pattern.png; sourceTree = "<group>"; };
+		017F667819FEF878004C168F /* everyfiveletterword.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = everyfiveletterword.txt; sourceTree = "<group>"; };
+		017F667A19FF0881004C168F /* skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skull.png; sourceTree = "<group>"; };
 		01A7B5C919EF219A0040E289 /* everyword.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = everyword.txt; sourceTree = "<group>"; };
 		01A7B5CB19EF31830040E289 /* everyfourletterword.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = everyfourletterword.txt; sourceTree = "<group>"; };
 		01E275B719EDD431007B5690 /* EnterPasswordScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasswordScene.swift; sourceTree = "<group>"; };
@@ -97,12 +103,15 @@
 			children = (
 				01FB4CB919F84ADC00E6C301 /* masterpasslogo.png */,
 				01484E9D19EC31FB00A3AC54 /* AppDelegate.swift */,
+				017F667619FEA065004C168F /* bo_play_pattern.png */,
 				01484EF619ECAF1C00A3AC54 /* Oval.png */,
+				017F667A19FF0881004C168F /* skull.png */,
 				01484E9F19EC31FB00A3AC54 /* GameScene.sks */,
 				01484EA119EC31FB00A3AC54 /* GameScene.swift */,
 				01FB4CB719F81D9300E6C301 /* MenuButton.swift */,
 				01E275B719EDD431007B5690 /* EnterPasswordScene.swift */,
 				01484EA319EC31FB00A3AC54 /* GameViewController.swift */,
+				017F667819FEF878004C168F /* everyfiveletterword.txt */,
 				01484EA819EC31FB00A3AC54 /* Images.xcassets */,
 				01484EFA19ECB69F00A3AC54 /* Rectangle.png */,
 				01484EAA19EC31FB00A3AC54 /* LaunchScreen.xib */,
@@ -224,7 +233,10 @@
 				01484EAC19EC31FB00A3AC54 /* LaunchScreen.xib in Resources */,
 				01484EA919EC31FB00A3AC54 /* Images.xcassets in Resources */,
 				01A7B5CA19EF219A0040E289 /* everyword.txt in Resources */,
+				017F667719FEA065004C168F /* bo_play_pattern.png in Resources */,
 				01484EF719ECAF1C00A3AC54 /* Oval.png in Resources */,
+				017F667B19FF0881004C168F /* skull.png in Resources */,
+				017F667919FEF878004C168F /* everyfiveletterword.txt in Resources */,
 				01484EA019EC31FB00A3AC54 /* GameScene.sks in Resources */,
 				01484EC319EC5EC500A3AC54 /* Main.storyboard in Resources */,
 				01484EFB19ECB69F00A3AC54 /* Rectangle.png in Resources */,

@@ -12,10 +12,6 @@ import QuartzCore
 
 class GameScene: SKScene, UITextFieldDelegate {
     
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        println("huh")
-//    }
-    
     let guessLetterWidth:CGFloat = 60
     let guessLetterHeight:CGFloat = 60
     let tileFontSize:CGFloat = 40
@@ -27,26 +23,25 @@ class GameScene: SKScene, UITextFieldDelegate {
     let playerPromptLine2 = SKLabelNode(fontNamed: "Chalkduster")
     var wordArray:[String] = Array()
     var globalPassphraseField = UITextField()
-//    var snap = UISnapBehavior()
     var animator = UIDynamicAnimator()
     var originPoint:CGPoint = CGPoint(x: 0.0,y: 0.0)
-   // var passcode:[Character] = Array()
-    
-    
-    
     var inputtedPassphrase = String()
+    var blurEffectView:UIVisualEffectView!
+    let topmostPosition:CGFloat = 0.0
+    var yPositionOfLowestRow:CGFloat = 99999
+    var lettersInWord = 5
+
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-
-    
         
-        let path = NSBundle.mainBundle().pathForResource("everyfourletterword", ofType: "txt")
-       // let content = NSString.stringWithContentsOfFile(path!, encoding: NSUTF8StringEncoding, error: nil)
+        self.backgroundColor = UIColor.blackColor()
+        
+        let path = NSBundle.mainBundle().pathForResource("everyfiveletterword", ofType: "txt")
         let content = NSString(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
         let upperContent = content!.uppercaseString
         wordArray = upperContent.componentsSeparatedByString("\n")
-        self.backgroundColor = UIColor.blackColor()
+    
         
         
         var masterpassLogo = UIImage(named: "masterpasslogo.png")
@@ -65,9 +60,8 @@ class GameScene: SKScene, UITextFieldDelegate {
         playerVPlayer.addTarget(self, action: Selector("pvpButtonPressed:"), forControlEvents: .TouchUpInside)
         view.addSubview(playerVPlayer)
         
-        
-    
-        
+        let handleTap = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard:"))
+        self.view?.addGestureRecognizer(handleTap)
 
     }
     
@@ -77,9 +71,7 @@ class GameScene: SKScene, UITextFieldDelegate {
             subview.removeFromSuperview()
         }
         
-        let randomIndex = Int(arc4random_uniform(UInt32(wordArray.count)))
-        vc.passcode = Array(wordArray[randomIndex])
-        println(vc.passcode)
+
         self.computerMasterPass()
         
         
@@ -92,33 +84,83 @@ class GameScene: SKScene, UITextFieldDelegate {
         self.enterMasterPass()
     }
     
+    func hideKeyboard(sender: UITapGestureRecognizer){
+        globalPassphraseField.text = nil
+        globalPassphraseField.resignFirstResponder()
+    }
+    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if (countElements(textField.text)) > 3 {
-            let swiftRange = advance(textField.text.startIndex, 3)..<advance(textField.text.startIndex, 4)
+        if (countElements(textField.text)) > lettersInWord-1 {
+            let swiftRange = advance(textField.text.startIndex, lettersInWord-1)..<advance(textField.text.startIndex, lettersInWord)
             textField.text = textField.text.stringByReplacingCharactersInRange(swiftRange, withString: "")
         }
         
         return true
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.animateView(self.view!, up: true)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.animateView(self.view!, up: false)
+    }
+    
+    func animateView(viewToAnimate:UIView, up:Bool){
+        
+
+        let movementDistance = -200 //ToDo: this shouldn't be static
+        let movement = (up ? movementDistance : -movementDistance)
+        UIView.beginAnimations("animateView", context: nil) //ToDo: use blocks instead
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(0.2)
+      
+        
+        if yPositionOfLowestRow < 340 {
+            view!.frame = CGRectOffset(view!.frame,0,CGFloat(movement))
+        }
+        else {
+             globalPassphraseField.frame = CGRectOffset(globalPassphraseField.frame, 0, CGFloat(movement))
+        }
+        
+
+        
+//        if up {
+//       //     let filter = CIFilter(name: "CIGaussianBlur")
+////            let blurLevel = 40.0
+////            filter.setValue(NSNumber(double: blurLevel), forKey: "inputRadius")
+//         //   self.shouldEnableEffects = true
+//    //        self.filter = filter
+//            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+//            blurEffectView = UIVisualEffectView(effect: blurEffect)
+//            let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
+//            blurEffectView.frame = view!.bounds //view is self.view in a UIViewController
+//            view!.insertSubview(blurEffectView, belowSubview: globalPassphraseField)
+//            //if you have more UIViews on screen, use insertSubview:belowSubview: to place it underneath the lowest view
+//            
+//            //add auto layout constraints so that the blur fills the screen upon rotating device
+//            blurEffectView.setTranslatesAutoresizingMaskIntoConstraints(false)
+//            view!.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+//            view!.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+//            view!.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
+//            view!.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
+//        }
+//        else {
+////            self.filter = nil
+////            self.shouldEnableEffects = false
+//            blurEffectView.removeFromSuperview()
+//        }
+      
+    }
+
+    
+    
     func computerMasterPass() {
-        let passphraseField = UITextField(frame:CGRectMake(self.view!.frame.width/2, 20, 2*view!.frame.width/3, 60))
-        passphraseField.center.x = view!.center.x
-        passphraseField.backgroundColor = UIColor.blackColor()
-        passphraseField.font = UIFont(name: "Avenir", size: tileFontSize)
-        passphraseField.textAlignment = NSTextAlignment.Center
-        passphraseField.keyboardType = UIKeyboardType.ASCIICapable
-        passphraseField.keyboardAppearance = UIKeyboardAppearance.Dark
-        passphraseField.autocorrectionType = UITextAutocorrectionType.No
-        passphraseField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        // passphraseField.placeholder = "- - - -"
-        passphraseField.textColor = UIColor.whiteColor()
-        passphraseField.returnKeyType = UIReturnKeyType.Done
-        passphraseField.delegate = self
-        let placeholderColor = UIColor.whiteColor()
-        passphraseField.attributedPlaceholder = NSAttributedString(string:"- - - -", attributes:[NSForegroundColorAttributeName: placeholderColor])
-        globalPassphraseField = passphraseField
-        view!.addSubview(passphraseField)
+        let randomIndex = Int(arc4random_uniform(UInt32(wordArray.count)))
+        vc.passcode = Array(wordArray[randomIndex])
+        println(vc.passcode)
+        
+        self.generatepassphraseField()
         
         playerPromptLine1.text = "THINK YOU CAN"
         playerPromptLine1.position = CGPointMake(self.frame.midX, self.frame.midY)
@@ -131,28 +173,13 @@ class GameScene: SKScene, UITextFieldDelegate {
         playerPromptLine2.fontSize = 30
         
         self.addChild(playerPromptLine2)
-        view!.addSubview(passphraseField)
     }
     
     
     func enterMasterPass() {
-        let passphraseField = UITextField(frame:CGRectMake(self.size.width/2, 20, 2*view!.frame.width/3, 60))
-        passphraseField.center.x = view!.center.x
-        passphraseField.backgroundColor = UIColor.blackColor()
-        passphraseField.font = UIFont(name: "Avenir", size: tileFontSize)
-        passphraseField.textAlignment = NSTextAlignment.Center
-        passphraseField.keyboardType = UIKeyboardType.ASCIICapable
-        passphraseField.autocorrectionType = UITextAutocorrectionType.No
-        passphraseField.keyboardAppearance = UIKeyboardAppearance.Dark
-        passphraseField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        // passphraseField.placeholder = "- - - -"
-        passphraseField.textColor = UIColor.whiteColor()
-        passphraseField.returnKeyType = UIReturnKeyType.Done
-        passphraseField.delegate = self
-        let placeholderColor = UIColor.whiteColor()
-        passphraseField.attributedPlaceholder = NSAttributedString(string:"- - - -", attributes:[NSForegroundColorAttributeName: placeholderColor])
-        globalPassphraseField = passphraseField
-        
+        vc.passcode = []
+        self.generatepassphraseField()
+
         playerPromptLine1.text = "SET MASTERPASS."
         playerPromptLine1.position = CGPointMake(self.frame.midX, self.frame.midY)
         playerPromptLine1.fontSize = 30
@@ -164,17 +191,41 @@ class GameScene: SKScene, UITextFieldDelegate {
         playerPromptLine2.fontSize = 30
         
         self.addChild(playerPromptLine2)
+    }
+    
+    func generatepassphraseField() {
+        let passphraseField = UITextField(frame:CGRectMake(0, view!.frame.height-100, view!.frame.width, 60))
+        passphraseField.center.x = view!.center.x
+        
+        passphraseField.font = UIFont(name: "Avenir", size: tileFontSize)
+        passphraseField.textAlignment = NSTextAlignment.Center
+        passphraseField.keyboardType = UIKeyboardType.ASCIICapable
+        passphraseField.autocorrectionType = UITextAutocorrectionType.No
+        passphraseField.keyboardAppearance = UIKeyboardAppearance.Dark
+        passphraseField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        passphraseField.textColor = UIColor.blackColor()
+        passphraseField.returnKeyType = UIReturnKeyType.Done
+        passphraseField.delegate = self
+        passphraseField.tintColor = UIColor.blackColor()
+       // passphraseField.borderStyle = UITextBorderStyle.Bezel
+       // let pattern = UIImage(named: "bo_play_pattern.png")
+       // passphraseField.backgroundColor = UIColor(patternImage: pattern!)
+        passphraseField.backgroundColor = UIColor.whiteColor()
+        let placeholderColor = UIColor.blackColor()
+        passphraseField.attributedPlaceholder = NSAttributedString(string:"● ● ● ●", attributes:[NSForegroundColorAttributeName: placeholderColor])
+        globalPassphraseField = passphraseField
         view!.addSubview(passphraseField)
+
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         inputtedPassphrase = textField.text.uppercaseString
         println(textField.text)
         textField.resignFirstResponder()
-        println(vc.passcode)
         if (vc.passcode.isEmpty && find(wordArray, inputtedPassphrase) != nil) {
             println("setting password!")
-            vc.passcode = Array(textField.text)
+            vc.passcode = Array(textField.text.uppercaseString)
+            println(vc.passcode)
             textField.text = nil
             playerPromptLine1.text = "THINK YOU CAN"
             playerPromptLine2.text = "HACK IT?"
@@ -206,55 +257,7 @@ class GameScene: SKScene, UITextFieldDelegate {
     }
     
     
-//    func shakeTheView() {
-        
-//        println("huh")
-//        let anim = CAKeyframeAnimation(keyPath: "transform")
-//        
-//        let leftTranslation = CATransform3DMakeTranslation(-10, 0, 0)
-//        let rightTranslation = CATransform3DMakeTranslation(30, 0, 0)
-//
-//        
-//        anim.values = [ [ NSValue(CATransform3D:leftTranslation) ], [ NSValue(CATransform3D:rightTranslation) ] ] ;
-//        anim.autoreverses = true
-//        anim.repeatCount = 4.0
-//        anim.duration = 1.0
-//        
-//        globalPassphraseField.layer.addAnimation(anim, forKey: nil)
-      //  self.view!.layer.addAnimation(anim, forKey:"transform")
-    //    view!.layer.addAnimation(anim, forKey:nil)
 
-        
-
-        
-        
-
-        
-//        
-//        originPoint = CGPoint(x: globalPassphraseField.frame.origin.x, y: globalPassphraseField.frame.origin.y)
-//        println(originPoint)
-//        
-//        UIView.animateKeyframesWithDuration(0.4, delay: 1.0, options: nil, animations: {
-//            self.globalPassphraseField.frame.origin.x -= 40
-//            }, completion: { finished in
-//                println("finished")
-//                self.snapBack()
-//                
-//        })
-//        
-//
-//        
-//        
-//    }
-//    
-//    func snapBack() {
-//        var snap = UISnapBehavior(item: globalPassphraseField, snapToPoint: CGPointMake(self.view!.frame.width/2, globalPassphraseField.frame.origin.y+30.0))
-//        println("snapping")
-//        println(originPoint)
-//        snap.damping = 1.0
-//        animator.addBehavior(snap)
-//        
-//    }
     
     func evaluateGuess(guessText: String) {
         numberOfGuesses++
@@ -315,7 +318,6 @@ class GameScene: SKScene, UITextFieldDelegate {
         
         let arrayOfLetters = Array(inputtedPassphrase)
         let leftmostPosition = self.frame.midX - CGFloat(arrayOfLetters.count-1)*guessLetterWidth/2
-        let topmostPosition:CGFloat = 80.0
         
         
         var letterNode = SKSpriteNode()
@@ -336,29 +338,15 @@ class GameScene: SKScene, UITextFieldDelegate {
             
         }
         
-        
-       // theShapePath.position = CGPointMake(leftmostPosition+(CGFloat(position)*guessLetterWidth),self.frame.midY)
-      //  theShapePath.strokeColor = UIColor.whiteColor()
-      //  theShapePath.lineWidth = 10
-        
        letterNode.position = CGPointMake(leftmostPosition+(CGFloat(position)*guessLetterWidth),self.frame.height-(topmostPosition+(CGFloat(numberOfGuesses)*guessLetterHeight)+verticalTileSpacing))
         
         
+        if letterNode.position.y < yPositionOfLowestRow {
+            yPositionOfLowestRow = letterNode.position.y
+            println(yPositionOfLowestRow)
+        }
         
-        
-        
-//        let slideIntoPlace = SKAction.moveTo(CGPointMake(leftmostPosition+(CGFloat(position)*guessLetterWidth),self.frame.height-(topmostPosition+(CGFloat(numberOfGuesses)*guessLetterHeight)+verticalTileSpacing)), duration: 0.4)
-//        
-//        
-//        letterNode.runAction(slideIntoPlace)
         letterNode.size = CGSizeMake(0.2,0.2)
-        
-
-   
- //       letterNode.position = CGPointMake(leftmostPosition+(CGFloat(position)*guessLetterWidth),self.frame.height-(topmostPosition+(CGFloat(numberOfGuesses)*guessLetterHeight)+verticalTileSpacing))
-        
-
-
 
         
         let letterLabelNode = SKLabelNode(fontNamed: "Avenir")
@@ -403,9 +391,9 @@ class GameScene: SKScene, UITextFieldDelegate {
     
     func winState(){
         println("you win")
-        for child in self.children {
-            child.removeFromParent()
-        }
+     //   for child in self.children {
+    //        child.removeFromParent()
+    //    }
         globalPassphraseField.removeFromSuperview()
         vc.defineWord()
     }
